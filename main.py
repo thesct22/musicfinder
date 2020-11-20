@@ -21,11 +21,11 @@ def sfar():
 def sfap():
    return spotify_artist.gethots()
 
-@app.route('/spotify/playlist/recent')
+@app.route('/spotify/playlists/recent')
 def sfpr():
    return spotify_playlist.getrecent()
    
-@app.route('/spotify/playlist/popular')
+@app.route('/spotify/playlists/popular')
 def sfpp():
    return spotify_playlist.gethots()
 
