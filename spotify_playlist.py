@@ -9,7 +9,7 @@ auth.set_access_token(ignrtis.acc_tkn, ignrtis.acc_tkn_srt)
 api = tweepy.API(auth)
 links=[]
 def getrecent():
-    for tweet in tweepy.Cursor(api.search,q="open.spotify.com/playlist",count=300,result_type="recent",tweet_mode="extended").items(300):
+    for tweet in tweepy.Cursor(api.search,q="open.spotify.com/playlist",count=100,result_type="recent").items(1000):
         
         urls= tweet.entities['urls']
         spotify=[d['expanded_url'] for d in urls if 'expanded_url' in d]
@@ -29,7 +29,7 @@ def getrecent():
     return (outdict)
 
 def gethots():
-    for tweet in tweepy.Cursor(api.search,q="open.spotify.com/playlist",count=300,result_type="popular",tweet_mode="extended").items(300):
+    for tweet in tweepy.Cursor(api.search,q="open.spotify.com/playlist",count=100,result_type="mixed").items(1000):
         
         urls= tweet.entities['urls']
         spotify=[d['expanded_url'] for d in urls if 'expanded_url' in d]
