@@ -1,6 +1,7 @@
 import tweepy
 import ignrtis
-from collections import Counter
+from collections import Counter, OrderedDict
+from operator import itemgetter
 
 auth = tweepy.OAuthHandler(ignrtis.con_key, ignrtis.con_key_srt)
 auth.set_access_token(ignrtis.acc_tkn, ignrtis.acc_tkn_srt)
@@ -15,7 +16,17 @@ def getrecent():
         links.extend(spotify)
         #print(tweet.full_text)
         # print(urls)
-    return (dict(Counter(links)))
+    tosent=dict(Counter(links))
+    d = OrderedDict(sorted(tosent.items(), key=itemgetter(1),reverse=True))
+    count=0
+    outdict={}
+    for i,j in d.items():
+        if (i.find('soundcloud')!=-1):
+            outdict[i]=j
+            count+=1
+        if(count==5):
+            break
+    return (outdict)
 
 def gethots():
     for tweet in tweepy.Cursor(api.search,q="soundcloud.app.goo.gl",count=100,result_type="popular",tweet_mode="extended").items(100):
@@ -25,6 +36,16 @@ def gethots():
         links.extend(spotify)
         #print(tweet.full_text)
         # print(urls)
-    return (dict(Counter(links)))
+    tosent=dict(Counter(links))
+    d = OrderedDict(sorted(tosent.items(), key=itemgetter(1),reverse=True))
+    count=0
+    outdict={}
+    for i,j in d.items():
+        if (i.find('soundcloud')!=-1):
+            outdict[i]=j
+            count+=1
+        if(count==5):
+            break
+    return (outdict)
 
 
