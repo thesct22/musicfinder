@@ -6,27 +6,27 @@ import spotify_playlist
 app = Flask(__name__)
 
 @app.route('/soundcloud/recent')
-def show_blog():
+def scr():
    return soundcloud.getrecent()
 
 @app.route('/soundcloud/popular')
-def show_blog():
+def scp():
    return soundcloud.gethots()
    
 @app.route('/spotify/artists/recent')
-def show_blog():
+def sfar():
    return spotify_artist.getrecent()
    
 @app.route('/spotify/artists/popular')
-def show_blog():
+def sfap():
    return spotify_artist.gethots()
 
 @app.route('/spotify/playlist/recent')
-def show_blog():
+def sfpr():
    return spotify_playlist.getrecent()
    
 @app.route('/spotify/playlist/popular')
-def show_blog():
+def sfpp():
    return spotify_playlist.gethots()
 
 if __name__ == '__main__':
