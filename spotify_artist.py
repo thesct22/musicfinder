@@ -15,24 +15,3 @@ for tweet in tweepy.Cursor(api.search,q="open.spotify.com/artist",count=1000,res
     #print(tweet.full_text)
     # print(urls)
 print (Counter(links))
-
-
-# public_tweets = api.home_timeline()
-# for tweet in public_tweets:
-#     print(tweet.text)
-
-# status = api.get_status(id, tweet_mode="extended")
-# try:
-#     print(status.retweeted_status.full_text)
-# except AttributeError:  # Not a Retweet
-#     print(status.full_text)
-
-
-#override tweepy.StreamListener to add logic to on_status
-# class MyStreamListener(tweepy.StreamListener):
-
-#     def on_status(self, status):
-#         print(status.text)
-# myStreamListener = MyStreamListener()
-# myStream = tweepy.Stream(auth = api.auth, listener=myStreamListener)
-# myStream.filter(track=[''])
