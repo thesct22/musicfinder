@@ -28,7 +28,7 @@ def getrecent():
             break
     return (outdict)
 def gethots():
-    for tweet in tweepy.Cursor(api.search,q="open.spotify.com/artist",count=100,result_type="mixed").items(1000):
+    for tweet in tweepy.Cursor(api.search,q="open.spotify.com/artist",count=100,result_type="popular").items(1000):
         
         urls= tweet.entities['urls']
         spotify=[d['expanded_url'] for d in urls if 'expanded_url' in d]
