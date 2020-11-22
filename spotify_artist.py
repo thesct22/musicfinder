@@ -6,7 +6,7 @@ from operator import itemgetter
 auth = tweepy.OAuthHandler(ignrtis.con_key, ignrtis.con_key_srt)
 auth.set_access_token(ignrtis.acc_tkn, ignrtis.acc_tkn_srt)
 
-api = tweepy.API(auth)
+api = tweepy.API(auth,wait_on_rate_limit=True)
 links=[]
 def getrecent():
     for tweet in tweepy.Cursor(api.search,q="open.spotify.com/artist",count=100,result_type="recent").items(1000):
@@ -24,11 +24,11 @@ def getrecent():
         if (i.find('spoti')!=-1):
             outdict[i]=j
             count+=1
-        if(count==5):
+        if(count==6):
             break
     return (outdict)
 def gethots():
-    for tweet in tweepy.Cursor(api.search,q="open.spotify.com/artist",count=100,result_type="popular").items(1000):
+    for tweet in tweepy.Cursor(api.search,q="open.spotify.com/artist",count=100,result_type="mixed").items(1000):
         
         urls= tweet.entities['urls']
         spotify=[d['expanded_url'] for d in urls if 'expanded_url' in d]
@@ -43,6 +43,6 @@ def gethots():
         if (i.find('spoti')!=-1):
             outdict[i]=j
             count+=1
-        if(count==5):
+        if(count==6):
             break
     return (outdict)
