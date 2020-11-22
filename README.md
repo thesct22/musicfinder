@@ -4,7 +4,7 @@ Flask app that finds the recently tweeted soundcloud, spotify artists and playli
 
 Install with pip:
 
-<pip command>
+pip install -r requirements.txt
 
 File structure:
 
@@ -26,4 +26,12 @@ File structure:
     
 No subfolders exist 
 
+for production mode run 
+```sh
+start.sh
+```
 
+for debug mode run 
+```shell
+python main.py
+```
