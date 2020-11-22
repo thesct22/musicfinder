@@ -41,6 +41,8 @@ Docker image availbale on [Docker Hub](https://hub.docker.com/repository/docker/
 
 running on [Heroku](http://dry-citadel-29832.herokuapp.com)
 
+endpoints:
+
 * "/soundcloud/recent"
 * "/soundcloud/popular"
 * "/spotify/artists/recent"
