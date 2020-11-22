@@ -37,3 +37,6 @@ for debug mode run
 ```shell
 python main.py
 ```
+Docker image availbale on [Docker Hub](https://hub.docker.com/repository/docker/thesct22/musicfinder-backend)
+
+running on [Heroku](http://dry-citadel-29832.herokuapp.com)
