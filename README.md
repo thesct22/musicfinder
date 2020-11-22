@@ -1,6 +1,6 @@
 Particulars:
 
-Flask app that finds the recently tweeted soundcloud, spotify artists and playlists <modify and add if needed>
+Flask app that finds the recently tweeted Soundcloud songs, Spotify artists and playlists
 
 Install with pip:
 
@@ -40,3 +40,11 @@ python main.py
 Docker image availbale on [Docker Hub](https://hub.docker.com/repository/docker/thesct22/musicfinder-backend)
 
 running on [Heroku](http://dry-citadel-29832.herokuapp.com)
+
+endpoints:
+    * /soundcloud/recent
+    * /soundcloud/popular
+    * /spotify/artists/recent
+    * /spotify/artists/popular
+    * /spotify/playlists/recent
+    * /spotify/playlists/popular
