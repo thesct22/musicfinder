@@ -4,7 +4,9 @@ Flask app that finds the recently tweeted soundcloud, spotify artists and playli
 
 Install with pip:
 
+```sh
 pip install -r requirements.txt
+```
 
 File structure:
 
